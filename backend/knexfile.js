@@ -1,44 +1,20 @@
-// Update with your config settings.
+"use struct";
+
+const DB = require("./config/database");
+const ENVS = require("./config/envs");
+const appEnv = process.env.NODE_ENV || ENVS.dev;
 
 module.exports = {
-
-  development: {
-    client: 'sqlite3',
-    connection: {
-      filename: './dev.sqlite3'
-    }
-  },
-
-  staging: {
-    client: 'postgresql',
-    connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
-    },
-    pool: {
-      min: 2,
-      max: 10
-    },
+  [appEnv]: {
+    client: "pg",
+    connection: DB.PG_CONNECTION_OBJECT[appEnv],
     migrations: {
-      tableName: 'knex_migrations'
-    }
+      directory: __dirname + "/db/migrations",
+      schemaName: "public",
+      tableName: "knex_migrations",
+    },
+    seeds: {
+      directory: __dirname + "/db/seeds",
+    },
   },
-
-  production: {
-    client: 'postgresql',
-    connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
-    },
-    pool: {
-      min: 2,
-      max: 10
-    },
-    migrations: {
-      tableName: 'knex_migrations'
-    }
-  }
-
 };
