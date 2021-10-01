@@ -1,0 +1,31 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "TZ=GMT node --max-old-space-size=2048 src/server.js",
+    "dev-start": "TZ=GMT nodemon --max-old-space-size=2048 src/server.js",
+    "knex:migrate:latest": "knex --knexfile knexfile.js migrate:latest",
+    "knex:migrate:rollback": "knex --knexfile knexfile.js migrate:rollback",
+    "knex:seed": "knex --knexfile knexfile.js seed:run"
+  },
+  "dependencies": {
+    "@hapi/joi-date": "^2.0.1",
+    "axios": "^0.21.1",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "knex": "^0.20.15",
+    "luxon": "^1.24.1",
+    "pg": "^7.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "2.0.12",
+    "prettier": "2.4.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
