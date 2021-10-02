@@ -14,6 +14,10 @@ exports.up = async function (knex) {
         .inTable("user_management.public_user_information");
       table.string("password").notNullable();
       table.jsonb("kyc_data").notNullable();
+      table
+        .integer("location_id")
+        .references("id")
+        .inTable("app_data.location");
       table.timestamps(true, true);
       table.unique("username");
     });
