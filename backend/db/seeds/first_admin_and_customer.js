@@ -22,12 +22,12 @@ exports.seed = async function (knex) {
     {
       username: "user100001",
       password: "P@ssw0rd",
-      kyc_data: { aadhar_id: "2201-5385-8785" },
+      kyc_data: { aadhar_number: "220153858785" },
     },
     {
       username: "user100002",
       password: "P@ssw0rd",
-      kyc_data: { aadhar_id: "6601-6685-6685" },
+      kyc_data: { aadhar_number: "660166856685" },
     },
   ]);
 };

@@ -9,7 +9,7 @@ module.exports = {
       FIRST_NAME: "first_name",
       LAST_NAME: "last_name",
       EMAIL: "email",
-      ROLL: "role",
+      ROLE: "role",
       IS_VERIFIED: "is_verified",
       CREATED_AT: "created_at",
       UPDATED_AT: "updated_at",
