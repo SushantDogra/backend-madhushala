@@ -13,7 +13,6 @@ exports.up = async function (knex) {
         .references("username")
         .inTable("user_management.public_user_information");
       table.string("password").notNullable();
-      table.boolean("is_verified").notNullable().defaultTo(false);
       table.jsonb("kyc_data").notNullable();
       table.timestamps(true, true);
       table.unique("username");

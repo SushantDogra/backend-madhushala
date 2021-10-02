@@ -1,11 +1,9 @@
 "use strict";
 
-const users = [
-  { firstName: "First", lastName: "User" },
-  { firstName: "Second", lastName: "User" },
-];
+const database = require("./database");
 
-function getAllUsers() {
+async function getAllUsers() {
+  const users = await database.getAllUsersFromDb();
   return users;
 }
 

@@ -10,6 +10,7 @@ module.exports = {
       LAST_NAME: "last_name",
       EMAIL: "email",
       ROLL: "role",
+      IS_VERIFIED: "is_verified",
       CREATED_AT: "created_at",
       UPDATED_AT: "updated_at",
     },
@@ -17,9 +18,8 @@ module.exports = {
   PRIVATE_USER_INFORMATION: {
     NAME: "user_management.private_user_information",
     FIELDS: {
-      USER_ID: "user_id",
+      USERNAME: "username",
       PASSWORD: "password",
-      IS_VERIFIED: "is_verified",
       KYC_DATA: "kyc_data",
     },
   },
