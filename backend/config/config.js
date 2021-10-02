@@ -1,5 +1,6 @@
 "use strict";
 
+const commonUtils = require("../src/utils/common_utils");
 const ENVS = require("./envs");
 const DB = require("./database");
 const SETTINGS = require("./settings");
@@ -23,6 +24,22 @@ const knex = require("knex")({
   acquireConnectionTimeout: 10000,
 });
 
+const API_RESPONSE_CODES = {
+  STATUS_CODES: {
+    200: "Ok",
+    201: "Created",
+    400: "Bad request",
+    401: "Unauthorized",
+    403: "Forbidden",
+    404: "Not found",
+    409: "Conflict",
+    429: "Too Many Requests",
+    440: "Login expired",
+    500: "Server error",
+    504: "Gateway Timeout",
+  },
+};
+
 module.exports = {
   getAppEnv: () => {
     return appEnv;
@@ -41,5 +58,26 @@ module.exports = {
   },
   getPort() {
     return SETTINGS.APP_SETTINGS.PORT;
+  },
+  getApiResponseCodes: () => {
+    return API_RESPONSE_CODES;
+  },
+  getConfig(key, defaultValue) {
+    let currentObj = SETTINGS;
+    const props = key.split(".");
+    for (let i = 0, len = props.length; i < len; i++) {
+      if (Object.prototype.hasOwnProperty.call(currentObj, props[i])) {
+        currentObj = currentObj[props[i]];
+      } else if (defaultValue) {
+        return defaultValue;
+      } else {
+        return null;
+      }
+    }
+    if (commonUtils.isObject(currentObj)) {
+      return currentObj[appEnv] || currentObj.default;
+    } else {
+      return currentObj;
+    }
   },
 };
