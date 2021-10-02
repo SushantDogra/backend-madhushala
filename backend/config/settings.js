@@ -10,7 +10,7 @@ module.exports = {
     X_API_KEY: "X-Api-Key",
     X_USER_ID: "X-User-Id",
     X_ACTOR_KEY: "X-Actor-Key",
-    X_USER_TOKEN: "X-ms-User-Token",
+    X_USER_TOKEN: "X-Ms-User-Token",
     X_TRACE_CONTEXT: "X-Trace-Context",
     X_CLIENT_SOURCE: "X-Client-Source",
     X_TOTAL_COUNT: "X-Total-Count",

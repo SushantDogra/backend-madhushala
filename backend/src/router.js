@@ -52,7 +52,7 @@ module.exports = (app) => {
 
   app.get("/aboutme", about);
 
-  //app.use(accessControl);
+  app.use(accessControl);
 
   for (const route in allowedRoutes) {
     const routeDef = allowedRoutes[route];
