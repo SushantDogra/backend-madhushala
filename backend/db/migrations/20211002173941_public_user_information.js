@@ -12,6 +12,7 @@ exports.up = async function (knex) {
       table.string("last_name");
       table.string("email").notNullable();
       table.string("role").notNullable();
+      table.boolean("is_verified").notNullable().defaultTo(false);
       table.timestamps(true, true);
       table.unique("username");
       table.unique("email");
