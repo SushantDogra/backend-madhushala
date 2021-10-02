@@ -1,3 +1,8 @@
 "use strict";
 
-module.exports = {};
+module.exports = {
+  USER_ROLES: {
+    ADMIN: "admin",
+    CUSTOMER: "customer",
+  },
+};
