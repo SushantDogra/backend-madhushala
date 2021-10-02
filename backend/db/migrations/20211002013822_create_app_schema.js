@@ -9,7 +9,7 @@ exports.up = async function (knex) {
 exports.down = async function (knex) {
   console.log(`dropping schemas`);
   await Promise.all([
-    knex.raw(`drop schema if not exists user_management`),
-    knex.raw(`drop schema if not exists app_data`),
+    knex.raw(`drop schema if exists user_management`),
+    knex.raw(`drop schema if exists app_data`),
   ]);
 };
