@@ -37,6 +37,27 @@ async function getAllLiqourDetailsForGivenLocation(city, state, country) {
   return transformedLiqourInformation;
 }
 
+async function addLiqour({ type, brand, name }) {}
+
+async function updateLiqourPriceForGivenBottleSizeAndLocation() {}
+
+async function updateLiqourAvailabilityForGivenBottleSizeAndLocation() {}
+
+async function getLiqourDetailsForGivenLocation() {}
+
+async function deleteLiqour() {}
+
+async function updateLiqour() {}
+
+async function getLiqour() {}
+
 module.exports = {
   getAllLiqourDetailsForGivenLocation,
+  addLiqour,
+  updateLiqourPriceForGivenBottleSizeAndLocation,
+  updateLiqourAvailabilityForGivenBottleSizeAndLocation,
+  getLiqourDetailsForGivenLocation,
+  deleteLiqour,
+  updateLiqour,
+  getLiqour,
 };

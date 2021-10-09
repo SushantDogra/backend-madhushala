@@ -17,4 +17,82 @@ module.exports = {
       respondError(res, error);
     }
   },
+
+  addLiqourController: async (req, res) => {
+    try {
+      const { type, brand, name } = req.body;
+      const result = await liqourService.addLiqour({
+        type,
+        brand,
+        name,
+      });
+      res.status(201).json(result);
+    } catch (error) {
+      respondError(res, error);
+    }
+  },
+
+  updateLiqourPriceForGivenBottleSizeAndLocationController: async (
+    req,
+    res
+  ) => {
+    try {
+      const result =
+        await liqourService.updateLiqourPriceForGivenBottleSizeAndLocation({});
+      res.status(200).json(result);
+    } catch (error) {
+      respondError(res, error);
+    }
+  },
+
+  updateLiqourAvailabilityForGivenBottleSizeAndLocationController: async (
+    req,
+    res
+  ) => {
+    try {
+      const result =
+        await liqourService.updateLiqourAvailabilityForGivenBottleSizeAndLocation(
+          {}
+        );
+      res.status(200).json(result);
+    } catch (error) {
+      respondError(res, error);
+    }
+  },
+
+  getLiqourDetailsForGivenLocationController: async (req, res) => {
+    try {
+      const result = await liqourService.getLiqourDetailsForGivenLocation({});
+      res.status(200).json(result);
+    } catch (error) {
+      respondError(res, error);
+    }
+  },
+
+  deleteLiqourController: async (req, res) => {
+    try {
+      const result = await liqourService.deleteLiqour({});
+      res.status(200).json(result);
+    } catch (error) {
+      respondError(res, error);
+    }
+  },
+
+  updateLiqourController: async (req, res) => {
+    try {
+      const result = await liqourService.updateLiqour({});
+      res.status(200).json(result);
+    } catch (error) {
+      respondError(res, error);
+    }
+  },
+
+  getLiqourController: async (req, res) => {
+    try {
+      const result = await liqourService.getLiqour({});
+      res.status(200).json(result);
+    } catch (error) {
+      respondError(res, error);
+    }
+  },
 };

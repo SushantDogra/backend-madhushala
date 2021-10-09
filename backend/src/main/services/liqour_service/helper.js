@@ -5,6 +5,7 @@ const { BOTTLE_SIZE } = require("../../../utils/global_constants");
 
 function initializeLiqourSizePriceAvailabilityMap(liqourObject) {
   const liqourSizePriceAvailabilityMap = {
+    liqour_id: liqourObject.liqour_id,
     type: liqourObject.type,
     brand: liqourObject.brand,
     name: liqourObject.name,
