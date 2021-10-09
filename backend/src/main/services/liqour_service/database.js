@@ -34,7 +34,23 @@ function getAllLiqourAvailabilityDetailsForGivenLocationFromDataBase(
     })
     .where(`lqa.${tables.LIQOUR_AVAILABILITY.FIELDS.LOCATION_ID}`, location_id);
 }
+
+function addLiqourToDatabase({
+  type,
+  brand,
+  name,
+  description,
+  image_url,
+  details,
+}) {
+  return db(tables.LIQOUR.NAME)
+    .insert([{ type, brand, name, description, image_url, details }])
+    .onConflict(["type", "brand", "name"])
+    .merge()
+    .returning("*");
+}
 module.exports = {
   getAllLiqourPriceDetailsForGivenLocationFromDataBase,
   getAllLiqourAvailabilityDetailsForGivenLocationFromDataBase,
+  addLiqourToDatabase,
 };

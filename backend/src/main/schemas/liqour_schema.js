@@ -11,6 +11,8 @@ const addLiqourSchema = Joi.object({
   type: Joi.string().required(),
   brand: Joi.string().required(),
   name: Joi.string().required(),
+  description: Joi.string(),
+  image_url: Joi.string(),
 });
 
 const updateLiqourPriceForGivenBottleSizeAndLocationSchema = Joi.object({});

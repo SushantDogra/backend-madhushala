@@ -37,7 +37,25 @@ async function getAllLiqourDetailsForGivenLocation(city, state, country) {
   return transformedLiqourInformation;
 }
 
-async function addLiqour({ type, brand, name }) {}
+async function addLiqour({
+  type,
+  brand,
+  name,
+  description,
+  image_url,
+  details = {},
+}) {
+  //TODO @sushant: Validate user context and only allow admin to add liqour
+  const addedLiqour = await database.addLiqourToDatabase({
+    type,
+    brand,
+    name,
+    description,
+    image_url,
+    details,
+  });
+  return addedLiqour[0];
+}
 
 async function updateLiqourPriceForGivenBottleSizeAndLocation() {}
 

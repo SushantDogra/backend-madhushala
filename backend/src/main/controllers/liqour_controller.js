@@ -20,11 +20,13 @@ module.exports = {
 
   addLiqourController: async (req, res) => {
     try {
-      const { type, brand, name } = req.body;
+      const { type, brand, name, description, image_url } = req.body;
       const result = await liqourService.addLiqour({
         type,
         brand,
         name,
+        description,
+        image_url,
       });
       res.status(201).json(result);
     } catch (error) {

@@ -7,7 +7,7 @@ function createLocationInDatabase(city, state, country) {
   return db(tables.LOCATION.NAME)
     .insert([{ city, state, country }])
     .onConflict(["city", "state", "country"])
-    .merge(["city", "state", "country"])
+    .merge()
     .returning("*");
 }
 
