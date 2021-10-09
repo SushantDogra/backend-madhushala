@@ -2,6 +2,7 @@
 
 const userManagementRoutes = require("../src/main/routes/user_management_routes");
 const commonRoutes = require("../src/main/routes/common_routes");
+const liqourRoutes = require("../src/main/routes/liqour_routes");
 
 let validatorMap = {};
 const allowedRoutes = ((routes) => {
@@ -25,7 +26,7 @@ const allowedRoutes = ((routes) => {
     }
   }
   return allowedRoutes;
-})([userManagementRoutes, commonRoutes]);
+})([userManagementRoutes, commonRoutes, liqourRoutes]);
 
 module.exports = {
   allowedRoutes,
