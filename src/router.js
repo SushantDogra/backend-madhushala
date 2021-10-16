@@ -131,7 +131,11 @@ module.exports = (app) => {
   }
 
   app.get("/", (req, res) => {
-    res.status(200).send("welcome to madhushala, the liqour delivery service");
+    res
+      .status(200)
+      .send(
+        "welcome to the backend server of madhushala, the liqour delivery service"
+      );
   });
 
   app.all("*", (req, res) => {
