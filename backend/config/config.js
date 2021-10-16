@@ -57,7 +57,7 @@ module.exports = {
     return knex;
   },
   getPort() {
-    return SETTINGS.APP_SETTINGS.PORT;
+    return process.env.PORT || SETTINGS.APP_SETTINGS.PORT;
   },
   getApiResponseCodes: () => {
     return API_RESPONSE_CODES;
