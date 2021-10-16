@@ -18,6 +18,9 @@ module.exports = {
       user: "fazacozgkzunmq",
       password:
         "5db3a665528a1ce0631dd3d63903ce9275c770cb0bbfa5f9c1d59688744f45b3",
+      ssl: {
+        rejectUnauthorized: true,
+      },
     },
   },
   MIN_POOL_SIZE: {
